@@ -53,7 +53,7 @@
 
 <div align="center">
   <h2>Tech stacks</h2>
-  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&color=blue&logoColor=black">> 
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&color=blue&logoColor=black">
   <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&color=blue&logoColor=black">
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&color=blue&logoColor=black">
 </div>
