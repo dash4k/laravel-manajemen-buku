@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <section class="mt-25 lg:mt-20 lg:w-7/9 min-h-screen w-5/6 mx-auto rounded-sm transition-all duration-300 flex flex-col gap-2" enctype="multipart/form-data">
+    <section class="mt-25 lg:mt-20 lg:w-7/9 h-auto w-5/6 mx-auto rounded-sm transition-all duration-300 flex flex-col gap-2" enctype="multipart/form-data">
         <h1 class="font-poppins text-lg lg:text-xl font-bold">Manajemen Buku</h1>
         
         {{-- Input Nilai Container --}}
@@ -82,12 +82,12 @@
                     <div class="mb-2 flex flex-row justify-center items-start gap-1">
                         <div class="w-1/2">
                             <label for="judul" class="block mb-2 text-sm font-light text-gray-900">Judul Buku</label>
-                            <input type="text" id="judul" name="judul" class="border p-2 w-full rounded-md" required>
+                            <input type="text" id="judul" name="judul" class="border p-2 w-full rounded-md">
                             <p id="judulErrorMessage" class="text-red-500 mt-1 text-xs"></p>
                         </div>
                         <div class="w-1/2">
                             <label for="genre" class="block mb-2 text-sm font-light text-gray-900">Genre</label>
-                            <select id="genre" name="genre" class="border p-2 py-3 w-full rounded-md bg-white h-auto" required>
+                            <select id="genre" name="genre" class="border p-2 py-3 w-full rounded-md bg-white h-auto">
                             <option value="fiksi">Non-Fiksi</option>
                             <option value="non_fiksi">Fiksi</option>
                             </select>
@@ -96,31 +96,31 @@
                     <div class="mb-2 flex flex-row justify-center items-start gap-1">
                         <div class="w-1/2 grow-0">
                             <label for="penulis" class="block mb-2 text-sm font-light text-gray-900">Penulis</label>
-                            <input type="text" id="penulis" name="penulis" class="border p-2 w-full rounded-md" required>
+                            <input type="text" id="penulis" name="penulis" class="border p-2 w-full rounded-md">
                             <p id="penulisErrorMessage" class="text-red-500 mt-1 text-xs"></p>
                         </div>
                         <div class="w-1/2 grow-0">
                             <label for="penerbit" class="block mb-2 text-sm font-light text-gray-900">Penerbit</label>
-                            <input type="text" id="penerbit" name="penerbit" class="border p-2 w-full rounded-md" required>
+                            <input type="text" id="penerbit" name="penerbit" class="border p-2 w-full rounded-md">
                             <p id="penerbitErrorMessage" class="text-red-500 mt-1 text-xs"></p>
                         </div>
                     </div>
                     <div class="mb-2 flex flex-row justify-center items-start gap-1">
-                        <div class="w-1/2">
-                            <label for="status" class="block mb-2 text-sm font-light text-gray-900">Status</label>
-                            <select id="status" name="status" class="border p-2 py-3 w-full rounded-md bg-white h-auto" required>
-                            <option value="tersedia">Tersedia</option>
-                            <option value="tidak_tersedia">Tidak Tersedia</option>
-                            </select>
-                        </div>
                         <div class="w-1/2">
                             <label for="harga" class="block mb-2 text-sm font-light text-gray-900">Harga</label>
                             <div class="relative w-full">
                                 <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <i class="fa-solid fa-money-bill text-gray-400"></i>
                                 </span>
-                                <input type="number" id="harga" name="harga" class="pl-10 pr-4 py-2 border w-full rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" max="999999999999.99" step="0.01" required/>
+                                <input type="number" id="harga" name="harga" class="pl-10 pr-4 py-2 border w-full rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" max="999999999999.99" step="0.01"/>
                             </div>
+                        </div>
+                        <div class="w-1/2">
+                            <label for="status" class="block mb-2 text-sm font-light text-gray-900">Status</label>
+                            <select id="status" name="status" class="border p-2 py-3 w-full rounded-md bg-white h-auto">
+                            <option value="tersedia">Tersedia</option>
+                            <option value="tidak_tersedia">Tidak Tersedia</option>
+                            </select>
                         </div>
                     </div>
                     <div class="mb-2">

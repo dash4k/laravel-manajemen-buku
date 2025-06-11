@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const formContainer = document.getElementById('formContainer');
     const bukuForm = document.getElementById('bukuForm');
 
+    let editing = false;
+    const cover = document.getElementById('cover');
+
     const inputs = {
         judul: document.getElementById('judul'),
         penulis: document.getElementById('penulis'),
@@ -28,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const method = bukuForm.querySelector('input[name="_method"]');
         if (method) method.remove();
+
+        editing = false;
     }
 
     function setFormActionForEdit(id) {
@@ -44,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         methodInput.name = '_method';
         methodInput.value = 'PUT';
         bukuForm.appendChild(methodInput);
+
+        editing = true;
     }
 
     function populateForm(data) {
@@ -114,5 +121,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+    });
+
+    bukuForm.addEventListener('submit', (e) => {
+        const errors = [];
+
+        if (!inputs.judul.value.trim()) errors.push('Judul wajib diisi.');
+        if (!inputs.penulis.value.trim()) errors.push('Penulis wajib diisi.');
+        if (!inputs.penerbit.value.trim()) errors.push('Penerbit wajib diisi.');
+        if (!inputs.genre.value.trim()) errors.push('Genre wajib diisi.');
+        if (!inputs.status.value.trim()) errors.push('Status wajib diisi.');
+        
+        const hargaValue = parseFloat(inputs.harga.value.replace(',', '.'));
+        if (isNaN(hargaValue) || hargaValue < 0) {
+            errors.push('Harga harus berupa angka positif.');
+        }
+
+        if (!editing) {
+            if (!cover.value) {
+                errors.push('Cover wajib diisi.');
+            }
+        }
+        
+        if (errors.length > 0) {
+            e.preventDefault();
+            Swal.fire({
+                title: errors.length > 1 ? 'Incorrect Inputs' : 'Incorrect Input',
+                html: errors.join('<br>'),
+                icon: 'error',
+                confirmButtonText: 'Perbaiki'
+            });
+        }
     });
 });
